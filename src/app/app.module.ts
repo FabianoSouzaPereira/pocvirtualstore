@@ -10,7 +10,6 @@ import { OrderFormComponent } from './pages/orders/order-form/order-form.compone
 
 @NgModule({
   declarations: [
-    SharedModule,
     AppComponent,
     ProductFormComponent,
     CartFormComponent,
@@ -18,8 +17,9 @@ import { OrderFormComponent } from './pages/orders/order-form/order-form.compone
     OrderFormComponent
   ],
   imports: [
-    AppRoutingModule,
-    CoreModule
+    CoreModule,
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
