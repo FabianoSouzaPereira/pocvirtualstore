@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
+import { RouterModule } from "@angular/router";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BreadCrumbComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
-    CommonModule
+    //shared modules
+    CommonModule,
+    RouterModule,
+
+    //shared components
+    BreadCrumbComponent
   ]
 })
 export class SharedModule { }
