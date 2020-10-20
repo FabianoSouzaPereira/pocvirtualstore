@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
-import { CategoryComponent } from './category/category.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 
 @NgModule({
-  declarations: [ CategoryComponent ],
+  declarations: [ CategoryFormComponent ],
   imports: [
     SharedModule,
     CategoriesRoutingModule

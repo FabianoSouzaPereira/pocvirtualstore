@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 
 import { UsersRoutingModule } from './users-routing.module';
-import { UserComponent } from './user/user.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 
 @NgModule({
-  declarations: [ UserComponent ],
+  declarations: [ UserFormComponent ],
   imports: [
     SharedModule,
     UsersRoutingModule

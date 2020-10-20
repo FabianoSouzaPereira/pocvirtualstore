@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 
 import { PurchasesRoutingModule } from './purchases-routing.module';
-import { PurchaseComponent } from './purchase/purchase.component';
+import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
 
 
 @NgModule({
-  declarations: [ PurchaseComponent ],
+  declarations: [ PurchaseFormComponent ],
   imports: [
     SharedModule,
     PurchasesRoutingModule
