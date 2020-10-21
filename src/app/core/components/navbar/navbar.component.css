@@ -1,0 +1,19 @@
+.btnhover:hover {
+  color: #000 !important;
+}
+.btnBgColor {
+  background-color: burlywood;
+}
+
+.btnColorGreen {
+  background-color: #00b800;
+  color: #bbc7e0 !important;
+}
+
+.liSize-100 {
+  min-width: 100%;
+}
+
+.liSize-55 {
+  min-width: 55%;
+}

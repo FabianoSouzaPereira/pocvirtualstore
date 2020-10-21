@@ -5,7 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav liSize-100">
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/stores">Loja</a>
       </li>
@@ -18,11 +18,15 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/products">Produtos</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <button class="nav-link" routerLink="/logins">Login</button>
+      <li class="liSize-55 nav-item" routerLinkActive="active">
+        <button class=" float-right nav-link btn btn-success btnColorGreen btn-lm mx-2 text-lm pt-2 px-4"
+          routerLink="/logins">Entrar</button>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <button class="nav-link" routerLink="/carts">Carrinho</button>
+        <button class="nav-link btn btn-outline-light btnhover btnBgColor ml-4 pt-2" routerLink="/carts">
+          <span><i class="pi pi-shopping-cart"></i>&nbsp;Carrinho</span>
+          <span class="text-primary ml-1">0</span>
+        </button>
       </li>
     </ul>
   </div>

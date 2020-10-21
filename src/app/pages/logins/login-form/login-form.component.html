@@ -1,1 +1,23 @@
-<p>login-form works!</p>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first mt-5 mx-5 mt-5 p-5 fillColor">
+      <img src="../../../../assets/padlockclose.svg" id="icon" class="text-danger" alt="Icone usuário" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuário">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Senha">
+      <input type="submit" class="fadeIn fourth" value="Entrar">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Esqueceu a senha ?</a>
+    </div>
+
+  </div>
+</div>
