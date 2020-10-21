@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'purchases', loadChildren: './pages/purchases/purchases.module#PurchasesModule' },
   { path: 'users', loadChildren: './pages/users/users.module#UsersModule' },
   { path: 'stores', loadChildren: './pages/stores/stores.module#StoresModule' },
+  { path: 'carts', loadChildren: './pages/carts/carts.module#CartsModule' },
 
   { path: '', redirectTo: '/stores', pathMatch: 'full' },
   { path: '**', redirectTo: '/logins', pathMatch: 'full' }
