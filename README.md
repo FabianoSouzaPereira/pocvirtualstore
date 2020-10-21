@@ -1,4 +1,4 @@
-# Pocwebstore
+# Pocvirtualstore
 
 É uma aplicação web que foi baseada em Angular e tem a intenção demonstrar domínio desta
 técnologia; bem como as diversas outras que foram utilizadas nesse desenvolvimento.
