@@ -3,7 +3,7 @@ import { Login } from './login.model';
 
 export class LoginService extends BaseResourceService<Login> {
 
-  constructor() {
+  constructor(private loginService: LoginService) {
     super();
   }
 

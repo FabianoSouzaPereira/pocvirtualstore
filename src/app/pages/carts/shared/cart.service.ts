@@ -3,7 +3,7 @@ import { Cart } from './cart.model';
 
 export class CartService extends BaseResourceService<Cart> {
 
-  constructor() {
+  constructor(private cartService: CartService) {
     super();
   }
 
