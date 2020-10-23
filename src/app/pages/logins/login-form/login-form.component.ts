@@ -8,11 +8,9 @@ import { Login } from '../shared/login.model';
   styleUrls: [ './login-form.component.css' ]
 })
 export class LoginFormComponent extends BaseResourceFormComponent<Login> implements OnInit {
-<<<<<<< HEAD
-=======
   protected buildResourceForm(): void {
+    throw new Error('Method not implemented.');
   }
->>>>>>> master
 
   pageTitle: string;
 
