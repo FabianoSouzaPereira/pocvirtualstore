@@ -57,7 +57,14 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
 
+  submitForm() {
+    this.submittingForm = true;
 
+    if (this.currentAction == "new")
+      this.createResource();
+    else // currentAction == "edit"
+      this.updateResource();
+  }
 
   protected setPageTitle() {
     if (this.currentAction == 'new')
