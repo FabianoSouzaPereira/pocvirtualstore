@@ -1,7 +1,8 @@
-import { OnInit, AfterContentChecked } from '@angular/core';
+import { OnInit, AfterContentChecked, Injector } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseResourceModel } from '../models/base-resource.model';
+import { BaseResourceService } from '../services/base-resource.service';
 
 export abstract class BaseResourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
 
@@ -15,13 +16,21 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   protected router: Router;
   protected formBuilder: FormBuilder;
 
-  constructor() { }
+  constructor(
+    protected injector: Injector,
+    public resource: T,
+    protected resourceService: BaseResourceService<T>,) {
+    this.route = this.injector.get(ActivatedRoute);
+    this.router = this.injector.get(Router);
+    this.formBuilder = this.injector.get(FormBuilder);
+  }
 
   ngOnInit() {
     this.setCurrentAction();
     this.buildResourceForm();
     this.loadResource();
   }
+
   setCurrentAction() {
     throw new Error('Method not implemented.');
   }
@@ -34,6 +43,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   ngAfterContentChecked() {
     this.setPageTitle();
   }
+
 
   protected setPageTitle() {
     if (this.currentAction == 'new')
@@ -50,5 +60,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   protected editionPageTitle(): string {
     return "Edição"
   }
+
 
 }

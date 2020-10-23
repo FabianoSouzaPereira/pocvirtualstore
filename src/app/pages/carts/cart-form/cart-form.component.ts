@@ -14,7 +14,7 @@ export class CartFormComponent extends BaseResourceFormComponent<Cart> implement
   }
 
   constructor() {
-    super();
+    super(null, null, null);
   }
 
   ngOnInit(): void {
