@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { Store } from '../shared/store.model';
+import { StoreService } from '../shared/store.service';
 
 @Component({
   selector: 'app-store-form',
   templateUrl: './store-form.component.html',
   styleUrls: [ './store-form.component.css' ]
 })
-export class StoreFormComponent implements OnInit {
+export class StoreFormComponent extends BaseResourceFormComponent<Store> {
 
   pageTitle: string;
 
-  constructor() {
+  constructor(protected storeService: StoreService, protected injector: Injector) {
+    super(injector, storeService);
     this.pageTitle = "Loja";
   }
 
-  ngOnInit(): void {
+  protected buildResourceForm(): void {
+    throw new Error('Method not implemented.');
   }
+
 
 }

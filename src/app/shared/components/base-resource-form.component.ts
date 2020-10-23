@@ -1,9 +1,17 @@
 import { OnInit, AfterContentChecked, Injector } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 import { BaseResourceModel } from '../models/base-resource.model';
+
+import { switchMap } from "rxjs/operators";
+
+import toastr from "toastr";
+import { Injectable } from '@angular/core';
 import { BaseResourceService } from '../services/base-resource.service';
 
+@Injectable({
+  providedIn: 'root'
+})
 export abstract class BaseResourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
 
   currentAction: string;
@@ -18,8 +26,8 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   constructor(
     protected injector: Injector,
-    public resource: T,
-    protected resourceService: BaseResourceService<T>,) {
+    protected resourceService: BaseResourceService<T>,
+  ) {
     this.route = this.injector.get(ActivatedRoute);
     this.router = this.injector.get(Router);
     this.formBuilder = this.injector.get(FormBuilder);

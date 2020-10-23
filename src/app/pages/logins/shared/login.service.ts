@@ -1,10 +1,14 @@
+import { Injectable, Injector } from '@angular/core';
 import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
 import { Login } from './login.model';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class LoginService extends BaseResourceService<Login> {
 
-  constructor(private loginService: LoginService) {
-    super();
+  constructor(protected injector: Injector) {
+    super(injector);
   }
 
 }

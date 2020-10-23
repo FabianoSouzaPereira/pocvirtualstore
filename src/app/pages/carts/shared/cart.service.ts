@@ -7,8 +7,8 @@ import { Cart } from './cart.model';
 })
 export class CartService extends BaseResourceService<Cart> {
 
-  constructor(private cartService: CartService) {
-    super(Cart.fromJson);
+  constructor(protected injector: Injector) {
+    super(injector);
   }
 
 }

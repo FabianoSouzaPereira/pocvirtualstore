@@ -18,9 +18,9 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   protected formBuilder: FormBuilder;
 
   constructor(
-
+    protected injector: Injector
   ) {
-
+    this.http = injector.get(HttpClient);
   }
 
 
