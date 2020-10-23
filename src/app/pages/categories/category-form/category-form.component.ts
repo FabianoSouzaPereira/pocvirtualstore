@@ -11,7 +11,7 @@ import { CategoryService } from '../shared/category.service';
 export class CategoryFormComponent extends BaseResourceFormComponent<Category> {
 
   constructor(protected categoryService: CategoryService, protected injector: Injector) {
-    super(injector, categoryService, Category.fromJson);
+    super(injector, new Category(), categoryService, Category.fromJson);
   }
 
   protected buildResourceForm(): void {

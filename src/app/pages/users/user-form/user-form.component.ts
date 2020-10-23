@@ -14,7 +14,7 @@ export class UserFormComponent extends BaseResourceFormComponent<User> {
 
 
   constructor(protected userService: UserService, protected injector: Injector) {
-    super(injector, userService, User.fromJson);
+    super(injector, new User(), userService, User.fromJson);
   }
 
   protected buildResourceForm(): void {

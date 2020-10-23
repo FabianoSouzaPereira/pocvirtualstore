@@ -13,7 +13,7 @@ export class StoreFormComponent extends BaseResourceFormComponent<Store> {
   pageTitle: string;
 
   constructor(protected storeService: StoreService, protected injector: Injector) {
-    super(injector, storeService, Store.fromJson);
+    super(injector, new Store(), storeService, Store.fromJson);
     this.pageTitle = "Loja";
   }
 

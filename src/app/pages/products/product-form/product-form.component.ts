@@ -12,7 +12,7 @@ export class ProductFormComponent extends BaseResourceFormComponent<Product> {
 
 
   constructor(protected productsSevice: ProductService, protected injector: Injector) {
-    super(injector, productsSevice, Product.fromJson);
+    super(injector, new Product(), productsSevice, Product.fromJson);
   }
 
   protected buildResourceForm(): void {

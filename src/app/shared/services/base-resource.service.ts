@@ -51,6 +51,21 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     )
   }
 
+  getAll(): Observable<T[]> {
+    return this.http.get(this.apiPath).pipe(
+      map(this.jsonDataToResources.bind(this)),
+      catchError(this.handleError)
+    )
+  }
+
+  getById(id: number): Observable<T> {
+    const url = `${ this.apiPath }/${ id }`;
+
+    return this.http.get(url).pipe(
+      map(this.jsonDataToResource.bind(this)),
+      catchError(this.handleError)
+    )
+  }
 
   // PROTECTED METHODS
 

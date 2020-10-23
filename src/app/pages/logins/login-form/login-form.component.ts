@@ -15,7 +15,7 @@ export class LoginFormComponent extends BaseResourceFormComponent<Login>{
   pageTitle: string;
 
   constructor(protected loginService: LoginService, protected injector: Injector) {
-    super(injector, loginService, Login.fromJson);
+    super(injector, new Login(), loginService, Login.fromJson);
     this.pageTitle = 'Login'
   }
 

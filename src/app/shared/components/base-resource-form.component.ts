@@ -26,6 +26,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   constructor(
     protected injector: Injector,
+    public resource: T,
     protected resourceService: BaseResourceService<T>,
     protected jsonDataToResourceFn: (jsonData) => T
   ) {
@@ -52,8 +53,20 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   protected abstract buildResourceForm(): void;
 
-  loadResource() {
-    throw new Error('Method not implemented.');
+  protected loadResource() {
+    if (this.currentAction == "edit") {
+
+      this.route.paramMap.pipe(
+        switchMap(params => this.resourceService.getById(+params.get("id")))
+      )
+        .subscribe(
+          (resource) => {
+            this.resource = resource;
+            this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
+          },
+          (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
+        )
+    }
   }
 
 

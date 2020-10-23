@@ -12,7 +12,7 @@ export class CartFormComponent extends BaseResourceFormComponent<Cart> {
 
 
   constructor(protected cartService: CartService, protected injector: Injector) {
-    super(injector, cartService, Cart.fromJson);
+    super(injector, new Cart, cartService, Cart.fromJson);
   }
 
   protected buildResourceForm(): void {
