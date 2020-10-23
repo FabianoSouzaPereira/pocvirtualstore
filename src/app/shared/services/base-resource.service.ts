@@ -18,6 +18,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   protected formBuilder: FormBuilder;
 
   constructor(
+<<<<<<< HEAD
     protected apiPath: string,
     protected injector: Injector,
     protected jsonDataToResourceFn: (jsonData: any) => T
@@ -33,6 +34,13 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   }
 
 
+=======
+    protected jsonDataToResourceFn: (jsonData: any) => T
+  ) {
+
+  }
+
+>>>>>>> master
   // PROTECTED METHODS
 
   protected jsonDataToResources(jsonData: any[]): T[] {
