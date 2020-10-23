@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { RouterModule } from "@angular/router";
+import { ServerErrorMessagesComponent } from './components/server-error-messages/server-error-messages.component';
 
 
 
 @NgModule({
   declarations: [
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    ServerErrorMessagesComponent
   ],
   imports: [
     CommonModule,

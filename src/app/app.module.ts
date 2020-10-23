@@ -11,11 +11,13 @@ import { OrdersModule } from './pages/orders/orders.module';
 import { CategoriesModule } from './pages/categories/categories.module';
 import { CartsModule } from './pages/carts/carts.module';
 import { StoresModule } from './pages/stores/stores.module';
+import { ServerErrorMessagesComponent } from './server-error-messages/server-error-messages.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ServerErrorMessagesComponent,
   ],
   imports: [
     CoreModule,
