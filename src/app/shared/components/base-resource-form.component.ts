@@ -22,9 +22,14 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     this.buildResourceForm();
     this.loadResource();
   }
+
   setCurrentAction() {
-    throw new Error('Method not implemented.');
+    if (this.route.snapshot.url[ 0 ].path == "new")
+      this.currentAction = "new"
+    else
+      this.currentAction = "edit"
   }
+
   protected abstract buildResourceForm(): void;
 
   loadResource() {
