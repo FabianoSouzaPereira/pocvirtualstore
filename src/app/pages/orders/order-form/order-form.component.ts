@@ -11,7 +11,7 @@ import { OrderService } from '../shared/order.service';
 export class OrderFormComponent extends BaseResourceFormComponent<Order> {
 
   constructor(protected orderService: OrderService, protected injector: Injector) {
-    super(injector, orderService);
+    super(injector, orderService, Order.fromJson);
   }
 
   protected buildResourceForm(): void {

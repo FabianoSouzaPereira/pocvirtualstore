@@ -11,7 +11,7 @@ import { PurchaseService } from '../shared/purchase.service';
 export class PurchaseFormComponent extends BaseResourceFormComponent<Purchase> {
 
   constructor(protected purchaseService: PurchaseService, protected injector: Injector) {
-    super(injector, purchaseService);
+    super(injector, purchaseService, Purchase.fromJson);
   }
 
   protected buildResourceForm(): void {

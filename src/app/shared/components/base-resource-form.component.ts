@@ -27,6 +27,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   constructor(
     protected injector: Injector,
     protected resourceService: BaseResourceService<T>,
+    protected jsonDataToResourceFn: (jsonData) => T
   ) {
     this.route = this.injector.get(ActivatedRoute);
     this.router = this.injector.get(Router);
@@ -37,6 +38,9 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     this.setCurrentAction();
     this.buildResourceForm();
     this.loadResource();
+  }
+  ngAfterContentChecked() {
+    this.setPageTitle();
   }
 
   setCurrentAction() {
@@ -52,9 +56,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     throw new Error('Method not implemented.');
   }
 
-  ngAfterContentChecked() {
-    this.setPageTitle();
-  }
+
 
 
   protected setPageTitle() {
@@ -73,5 +75,48 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     return "Edição"
   }
 
+  protected createResource() {
+    const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
 
+    this.resourceService.create(resource)
+      .subscribe(
+        resource => this.actionsForSuccess(resource),
+        error => this.actionsForError(error)
+      )
+  }
+
+
+  protected updateResource() {
+    const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
+
+    this.resourceService.update(resource)
+      .subscribe(
+        resource => this.actionsForSuccess(resource),
+        error => this.actionsForError(error)
+      )
+  }
+
+
+  protected actionsForSuccess(resource: T) {
+    toastr.success("Solicitação processada com sucesso!");
+
+    const baseComponentPath: string = this.route.snapshot.parent.url[ 0 ].path;
+
+    // redirect/reload component page
+    this.router.navigateByUrl(baseComponentPath, { skipLocationChange: true }).then(
+      () => this.router.navigate([ baseComponentPath, resource.id, "edit" ])
+    )
+  }
+
+
+  protected actionsForError(error) {
+    toastr.error("Ocorreu um erro ao processar a sua solicitação!");
+
+    this.submittingForm = false;
+
+    if (error.status === 422)
+      this.serverErrorMessages = JSON.parse(error._body).errors;
+    else
+      this.serverErrorMessages = [ "Falha na comunicação com o servidor. Por favor, tente mais tarde." ]
+  }
 }

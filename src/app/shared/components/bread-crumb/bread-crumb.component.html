@@ -2,11 +2,12 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/">Loja</a></li>
 
-    <li *ngFor="let item of items" class="breadcrumb-item" [class.active]="istheLastItem(item)">
-      <span *ngIf="istheLastItem(item)">
+    <li *ngFor="let item of items" class="breadcrumb-item" [class.active]="isTheLastItem(item)">
+      <span *ngIf="isTheLastItem(item)">
         {{item.text}}
       </span>
-      <a *ngIf="!istheLastItem(item)" [routerLink]="item.link">
+
+      <a *ngIf="!isTheLastItem(item)" [routerLink]="item.link">
         {{item.text}}
       </a>
     </li>

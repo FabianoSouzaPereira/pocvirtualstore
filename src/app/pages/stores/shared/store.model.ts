@@ -5,4 +5,8 @@ export class Store extends BaseResourceModel {
   constructor() {
     super();
   }
+
+  static fromJson(jsonData: any): Store {
+    return Object.assign(new Store(), jsonData);
+  }
 }

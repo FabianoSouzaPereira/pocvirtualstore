@@ -8,7 +8,7 @@ import { Order } from './order.model';
 export class OrderService extends BaseResourceService<Order> {
 
   constructor(protected injector: Injector) {
-    super(injector);
+    super("", injector, Order.fromJson);
   }
 
 }

@@ -9,4 +9,8 @@ export class Login extends BaseResourceModel {
   ) {
     super();
   }
+
+  static fromJson(jsonData: any): Login {
+    return Object.assign(new Login(), jsonData);
+  }
 }

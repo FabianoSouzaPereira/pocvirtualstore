@@ -8,7 +8,7 @@ import { Cart } from './cart.model';
 export class CartService extends BaseResourceService<Cart> {
 
   constructor(protected injector: Injector) {
-    super(injector);
+    super("", injector, Cart.fromJson);
   }
 
 }

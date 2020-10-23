@@ -7,4 +7,7 @@ export class Product extends BaseResourceModel {
     super();
   }
 
+  static fromJson(jsonData: any): Product {
+    return Object.assign(new Product(), jsonData);
+  }
 }

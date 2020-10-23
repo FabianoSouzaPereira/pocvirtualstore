@@ -8,7 +8,7 @@ import { Login } from './login.model';
 export class LoginService extends BaseResourceService<Login> {
 
   constructor(protected injector: Injector) {
-    super(injector);
+    super("", injector, Login.fromJson);
   }
 
 }
