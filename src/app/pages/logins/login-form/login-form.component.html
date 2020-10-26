@@ -8,10 +8,12 @@
     </div>
 
     <!-- Login Form -->
-    <form [formGroup]="">
+    <form [formGroup]="resourceForm" (submit)="submitForm()">
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuário">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="Senha">
-      <input type="submit" class="fadeIn fourth" value="Entrar">
+
+      <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
+      <input [disabled]="submittingForm || resourceForm.invalid" type="submit" class="fadeIn fourth" value="Entrar">
     </form>
 
     <!-- Remind Passowrd -->
