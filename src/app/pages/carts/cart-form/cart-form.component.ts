@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { Cart } from '../shared/cart.model';
 import { CartService } from '../shared/cart.service';
 
@@ -12,7 +12,7 @@ export class CartFormComponent extends BaseResourceFormComponent<Cart> {
 
 
   constructor(protected cartService: CartService, protected injector: Injector) {
-    super(injector, cartService, Cart.fromJson);
+    super(injector, new Cart(), cartService, Cart.fromJson);
   }
 
   protected buildResourceForm(): void {

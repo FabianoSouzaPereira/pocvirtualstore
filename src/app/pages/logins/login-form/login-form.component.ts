@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { Login } from '../shared/login.model';
 import { LoginService } from '../shared/login.service';
 
@@ -15,7 +15,7 @@ export class LoginFormComponent extends BaseResourceFormComponent<Login>{
   pageTitle: string;
 
   constructor(protected loginService: LoginService, protected injector: Injector) {
-    super(injector, loginService, Login.fromJson);
+    super(injector, new Login(), loginService, Login.fromJson);
     this.pageTitle = 'Login'
   }
 

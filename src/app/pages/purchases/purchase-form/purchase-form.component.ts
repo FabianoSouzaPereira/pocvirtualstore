@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseResourceFormComponent } from '../../../shared/components/base-resource-form.component';
+import { BaseResourceFormComponent } from '../../../shared/components/base-resource-form/base-resource-form.component';
 import { Purchase } from '../shared/purchase.model';
 import { PurchaseService } from '../shared/purchase.service';
 
@@ -11,7 +11,7 @@ import { PurchaseService } from '../shared/purchase.service';
 export class PurchaseFormComponent extends BaseResourceFormComponent<Purchase> {
 
   constructor(protected purchaseService: PurchaseService, protected injector: Injector) {
-    super(injector, purchaseService, Purchase.fromJson);
+    super(injector, new Purchase(), purchaseService, Purchase.fromJson);
   }
 
   protected buildResourceForm(): void {

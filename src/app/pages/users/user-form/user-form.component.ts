@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { User } from '../shared/user.model';
 import { UserService } from '../shared/user.service';
 import { Validators } from "@angular/forms";
@@ -14,7 +14,8 @@ export class UserFormComponent extends BaseResourceFormComponent<User> {
 
 
   constructor(protected userService: UserService, protected injector: Injector) {
-    super(injector, userService, User.fromJson);
+    super(injector, new User(), userService, User.fromJson);
+    console.log(this);
   }
 
   protected buildResourceForm(): void {

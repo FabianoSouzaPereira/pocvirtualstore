@@ -25,6 +25,21 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     this.http = injector.get(HttpClient);
   }
 
+  getAll(): Observable<T[]> {
+    return this.http.get(this.apiPath).pipe(
+      map(this.jsonDataToResources.bind(this)),
+      catchError(this.handleError)
+    )
+  }
+
+  getById(id: number): Observable<T> {
+    const url = `${ this.apiPath }/${ id }`;
+
+    return this.http.get(url).pipe(
+      map(this.jsonDataToResource.bind(this)),
+      catchError(this.handleError)
+    )
+  }
 
   create(resource: T): Observable<T> {
     return this.http.post(this.apiPath, resource).pipe(

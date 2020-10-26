@@ -1,13 +1,13 @@
 import { OnInit, AfterContentChecked, Injector } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { BaseResourceModel } from '../models/base-resource.model';
+import { BaseResourceModel } from '../../models/base-resource.model';
 
 import { switchMap } from "rxjs/operators";
 
 import toastr from "toastr";
 import { Injectable } from '@angular/core';
-import { BaseResourceService } from '../services/base-resource.service';
+import { BaseResourceService } from '../../services/base-resource.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   constructor(
     protected injector: Injector,
+    public resource: T,
     protected resourceService: BaseResourceService<T>,
     protected jsonDataToResourceFn: (jsonData) => T
   ) {
@@ -39,23 +40,10 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     this.buildResourceForm();
     this.loadResource();
   }
+
   ngAfterContentChecked() {
     this.setPageTitle();
   }
-
-  setCurrentAction() {
-    if (this.route.snapshot.url[ 0 ].path == "new")
-      this.currentAction = "new"
-    else
-      this.currentAction = "edit"
-  }
-
-  protected abstract buildResourceForm(): void;
-
-  loadResource() {
-    throw new Error('Method not implemented.');
-  }
-
 
   submitForm() {
     this.submittingForm = true;
@@ -65,6 +53,33 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     else // currentAction == "edit"
       this.updateResource();
   }
+
+
+  // PRIVATE METHODS
+
+  protected setCurrentAction() {
+    if (this.route.snapshot.url[ 0 ].path == "new")
+      this.currentAction = "new"
+    else
+      this.currentAction = "edit"
+  }
+
+  protected loadResource() {
+    if (this.currentAction == "edit") {
+
+      this.route.paramMap.pipe(
+        switchMap(params => this.resourceService.getById(+params.get("id")))
+      )
+        .subscribe(
+          (resource) => {
+            this.resource = resource;
+            this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
+          },
+          (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
+        )
+    }
+  }
+
 
   protected setPageTitle() {
     if (this.currentAction == 'new')
@@ -81,6 +96,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   protected editionPageTitle(): string {
     return "Edição"
   }
+
 
   protected createResource() {
     const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
@@ -126,4 +142,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     else
       this.serverErrorMessages = [ "Falha na comunicação com o servidor. Por favor, tente mais tarde." ]
   }
+
+
+  protected abstract buildResourceForm(): void;
 }

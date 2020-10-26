@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { Store } from '../shared/store.model';
 import { StoreService } from '../shared/store.service';
 
@@ -13,7 +13,7 @@ export class StoreFormComponent extends BaseResourceFormComponent<Store> {
   pageTitle: string;
 
   constructor(protected storeService: StoreService, protected injector: Injector) {
-    super(injector, storeService, Store.fromJson);
+    super(injector, new Store(), storeService, Store.fromJson);
     this.pageTitle = "Loja";
   }
 
