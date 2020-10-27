@@ -1,11 +1,18 @@
 import { constructor } from "moment";
 import { BaseResourceModel } from "src/app/shared/models/base-resource.model";
+import { Product } from '../../products/shared/product.model';
+import { Order } from '../../orders/shared/order.model';
+
 
 export class Item extends BaseResourceModel {
   constructor(
     public id?: number,
-    public email?: string,
-    public password?: string,
+    public orderId?: number,
+    public order?: Order,
+    public productId?: number,
+    public product?: Product,
+    public number?: number,
+    public qty?: number,
   ) {
     super();
   }

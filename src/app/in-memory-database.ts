@@ -36,10 +36,23 @@ export class InMemoryDatabase implements InMemoryDbService {
 
     ];
     const purchases: Purchase[] = [];
+
     const carts: Cart[] = [];
-    const orders: Order[] = [];
-    const products: Product[] = [];
-    const items: Item[] = [];
+
+    const orders: Order[] = [
+      { id: 1, number: 10001, userId: users[ 1 ].id, user: users[ 1 ], paidText: 'Pago', date: "28/11/2018" }
+    ];
+    const products: Product[] = [
+      { id: 1, name: 'Relógio sharp', description: 'Relógio de pulso', price: 123.58, qty: 32, type: 'Full', categoryId: categories[ 2 ].id, category: categories[ 2 ], date: "28/11/2018", picture: '../assets/relogiopulso001.jpg' } as Product,
+      { id: 2, name: 'Celular', description: 'Celular Nokia', price: 822.48, qty: 12, type: 'Full', categoryId: categories[ 1 ].id, category: categories[ 1 ], date: "28/11/2018", picture: '../assets/celular001.jpg' } as Product,
+      { id: 3, name: 'Computador Desktop', description: 'Computador Desktop Panasonic', price: 4183.50, qty: 10, type: 'Full', categoryId: categories[ 3 ].id, category: categories[ 3 ], date: "28/11/2018", picture: '../assets/desktop001.jpg' } as Product,
+      { id: 4, name: 'Tablet', description: 'Tablet samsung', price: 523.12, qty: 8, type: 'Full', categoryId: categories[ 5 ].id, category: categories[ 5 ], date: "28/11/2018", picture: '../assets/tablet001.jpg' } as Product,
+    ];
+    const items: Item[] = [
+      { id: 1, number: orders[ 1 ].number, orderId: orders[ 1 ].id, order: orders[ 1 ], productId: products[ 1 ].id, product: products[ 1 ] },
+      { id: 2, number: orders[ 1 ].number, orderId: orders[ 1 ].id, order: orders[ 1 ], productId: products[ 3 ].id, product: products[ 3 ] },
+    ];
+
     const login: Login[] = [
       {}
     ];
