@@ -14,7 +14,4 @@ export class ItemFormComponent extends BaseResourceListComponent<Item> {
     super(itemService);
   }
 
-  ngOnInit(): void {
-  }
-
 }

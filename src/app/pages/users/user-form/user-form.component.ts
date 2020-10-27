@@ -10,15 +10,9 @@ import { Validators } from "@angular/forms";
   styleUrls: [ './user-form.component.css' ]
 })
 export class UserFormComponent extends BaseResourceFormComponent<User> {
-  [ x: string ]: any;
-
 
   constructor(protected userService: UserService, protected injector: Injector) {
     super(injector, new User(), userService, User.fromJson);
-<<<<<<< HEAD
-=======
-    console.log(this);
->>>>>>> pages_templates
   }
 
   protected buildResourceForm(): void {
