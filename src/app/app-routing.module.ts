@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'users', loadChildren: './pages/users/users.module#UsersModule' },
   { path: 'stores', loadChildren: './pages/stores/stores.module#StoresModule' },
   { path: 'carts', loadChildren: './pages/carts/carts.module#CartsModule' },
+  { path: 'items', loadChildren: '.pages/items/items.module#ItemsModule' },
 
   { path: '', redirectTo: '/stores', pathMatch: 'full' },
   { path: '**', redirectTo: '/logins', pathMatch: 'full' }

@@ -8,7 +8,7 @@ import { BaseResourceService } from 'src/app/shared/services/base-resource.servi
 export class StoreService extends BaseResourceService<Store> {
 
   constructor(protected injector: Injector) {
-    super("", injector, Store.fromJson);
+    super("api/stores", injector, Store.fromJson);
   }
 
 }

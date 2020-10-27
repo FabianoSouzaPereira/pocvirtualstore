@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { Validators } from "@angular/forms";
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { Store } from '../shared/store.model';
 import { StoreService } from '../shared/store.service';
 
@@ -17,8 +18,12 @@ export class StoreFormComponent extends BaseResourceFormComponent<Store> {
     this.pageTitle = "Loja";
   }
 
-  protected buildResourceForm(): void {
-    throw new Error('Method not implemented.');
+  protected buildResourceForm() {
+    this.resourceForm = this.formBuilder.group({
+      id: [ null ],
+      name: [ null, [ Validators.required, Validators.minLength(2) ] ],
+      description: [ null ]
+    });
   }
 
 

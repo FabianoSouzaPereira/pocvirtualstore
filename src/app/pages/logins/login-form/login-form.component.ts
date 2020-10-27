@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form.component';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { Login } from '../shared/login.model';
 import { LoginService } from '../shared/login.service';
 

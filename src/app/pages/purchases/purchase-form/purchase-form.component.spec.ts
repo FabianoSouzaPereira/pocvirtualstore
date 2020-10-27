@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// Http testing module and mocking controller
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { PurchaseFormComponent } from './purchase-form.component';
+// Other imports
+import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 describe('PurchaseFormComponent', () => {
-  let component: PurchaseFormComponent;
-  let fixture: ComponentFixture<PurchaseFormComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PurchaseFormComponent ]
-    })
-    .compileComponents();
-  });
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PurchaseFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
+
+    // Inject the http service and test controller for each test
+    httpClient = TestBed.get(HttpClient);
+    httpTestingController = TestBed.get(HttpTestingController);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('works', () => {
   });
 });

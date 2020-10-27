@@ -1,13 +1,13 @@
 import { OnInit, AfterContentChecked, Injector } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { BaseResourceModel } from '../models/base-resource.model';
+import { BaseResourceModel } from '../../models/base-resource.model';
 
 import { switchMap } from "rxjs/operators";
 
 import toastr from "toastr";
 import { Injectable } from '@angular/core';
-import { BaseResourceService } from '../services/base-resource.service';
+import { BaseResourceService } from '../../services/base-resource.service';
 
 @Injectable({
   providedIn: 'root'
@@ -40,22 +40,32 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     this.buildResourceForm();
     this.loadResource();
   }
+
   ngAfterContentChecked() {
     this.setPageTitle();
   }
 
-  setCurrentAction() {
+  submitForm() {
+    this.submittingForm = true;
+
+    if (this.currentAction == "new")
+      this.createResource();
+    else // currentAction == "edit"
+      this.updateResource();
+  }
+
+
+  // PRIVATE METHODS
+
+  protected setCurrentAction() {
     if (this.route.snapshot.url[ 0 ].path == "new")
       this.currentAction = "new"
     else
       this.currentAction = "edit"
   }
 
-  protected abstract buildResourceForm(): void;
-
   protected loadResource() {
     if (this.currentAction == "edit") {
-
       this.route.paramMap.pipe(
         switchMap(params => this.resourceService.getById(+params.get("id")))
       )
@@ -69,15 +79,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     }
   }
 
-
-  submitForm() {
-    this.submittingForm = true;
-
-    if (this.currentAction == "new")
-      this.createResource();
-    else // currentAction == "edit"
-      this.updateResource();
-  }
 
   protected setPageTitle() {
     if (this.currentAction == 'new')
@@ -94,6 +95,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   protected editionPageTitle(): string {
     return "Edição"
   }
+
 
   protected createResource() {
     const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
@@ -139,4 +141,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     else
       this.serverErrorMessages = [ "Falha na comunicação com o servidor. Por favor, tente mais tarde." ]
   }
+
+
+  protected abstract buildResourceForm(): void;
 }
