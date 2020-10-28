@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BaseResourceListComponent } from 'src/app/shared/components/base-resource-list/base-resource-list.component';
+import { BaseResourceListComponent } from '../../../shared/components/base-resource-list/base-resource-list.component';
 import { User } from '../shared/user.model';
 import { UserService } from '../shared/user.service';
 

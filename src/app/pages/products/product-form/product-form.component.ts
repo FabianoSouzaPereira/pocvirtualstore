@@ -16,7 +16,18 @@ export class ProductFormComponent extends BaseResourceFormComponent<Product> {
   }
 
   protected buildResourceForm(): void {
-    throw new Error('Method not implemented.');
+    this.resourceForm = this.formBuilder.group({
+      id: [ null ],
+      name: [ null ],
+      description: [ null ],
+      type: [ null ],
+      qty: [ null ],
+      price: [ null ],
+      date: [ null ],
+      categoryId: [ null ],
+      category: [ null ],
+      picture: [ null ],
+    });
   }
 
 }

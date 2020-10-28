@@ -15,7 +15,14 @@ export class OrderFormComponent extends BaseResourceFormComponent<Order> {
   }
 
   protected buildResourceForm(): void {
-    throw new Error('Method not implemented.');
+    this.resourceForm = this.formBuilder.group({
+      id: [ null ],
+      number: [ null ],
+      userId: [ null ],
+      user: [ null ],
+      date: [ null ],
+      paid: [ null ],
+    });
   }
 
 

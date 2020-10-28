@@ -11,7 +11,6 @@ import { Product } from './pages/products/shared/product.model';
 import { Purchase } from './pages/purchases/shared/purchase.model';
 import { Store } from './pages/stores/shared/store.model';
 import { User } from './pages/users/shared/user.model';
-//import { Entry } from "./pages/entries/shared/entry.model";
 
 @Injectable({
   providedIn: 'root'

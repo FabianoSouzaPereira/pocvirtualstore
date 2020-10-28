@@ -1,5 +1,5 @@
-import { Component, Injector, OnInit } from '@angular/core';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
+import { Component } from '@angular/core';
+import { BaseResourceListComponent } from 'src/app/shared/components/base-resource-list/base-resource-list.component';
 import { Product } from '../shared/product.model';
 import { ProductService } from '../shared/product.service';
 
@@ -8,17 +8,10 @@ import { ProductService } from '../shared/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: [ './product-list.component.css' ]
 })
-export class ProductListComponent extends BaseResourceFormComponent<Product> {
+export class ProductListComponent extends BaseResourceListComponent<Product> {
 
-  constructor(protected productsSevice: ProductService, protected injector: Injector) {
-    super(injector, new Product(), productsSevice, Product.fromJson);
-
+  constructor(protected productSevice: ProductService) {
+    super(productSevice);
   }
 
-  protected buildResourceForm(): void {
-    this.resourceForm = this.formBuilder.group({
-      id: [ null ],
-
-    });
-  }
 }
