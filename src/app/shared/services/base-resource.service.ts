@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, throwError } from 'rxjs';
 import { BaseResourceModel } from '../models/base-resource.model';
-import { Injector } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { Injector } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 export abstract class BaseResourceService<T extends BaseResourceModel> {
 
@@ -67,8 +68,8 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   }
 
 
-  // PROTECTED METHODS
 
+  // PROTECTED METHODS
 
   protected jsonDataToResources(jsonData: any[]): T[] {
     const resources: T[] = [];
@@ -86,4 +87,5 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     console.log("ERRO NA REQUISIÇÃO => ", error);
     return throwError(error);
   }
+
 }
