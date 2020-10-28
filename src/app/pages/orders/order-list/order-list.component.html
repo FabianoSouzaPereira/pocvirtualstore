@@ -9,19 +9,30 @@
     <tr class="bg-primary text-light">
       <th>Order</th>
       <th>Cliente</th>
-      <th class="text-right">Valor R$</th>
-      <th class="text-center">Ações</th>
+      <th>Pagamento</th>
+      <th class="text-center">Data</th>
+      <th class="text-center">Valor R$</th>
+      <th class="text-center">Ação</th>
+
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let order of resources">
       <td>
         <strong>{{order.number}}</strong><br>
-        <small class="text-success">{{order.date}}</small><br>
-        <small *ngIf="order.user">{{order.user}}</small>
+
       </td>
       <td>
+        <small *ngIf="order.user">{{order.user.email}}</small>
+      </td>
+      <td [class.text-success]="order.type == 'send'" [class.text-danger]="order.type == 'nosend'">
         {{order.paidText}}
+      </td>
+      <td class="text-center">
+        <small class="text-success">{{order.date}}</small><br>
+      </td>
+      <td class="text-center">
+        <small class="text-success">{{order.amount}}</small><br>
       </td>
       <td class="text-center">
         <a [routerLink]="[order.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>

@@ -1,4 +1,4 @@
-import { Component, Injector } from '@angular/core';
+import { Component } from '@angular/core';
 import { BaseResourceListComponent } from 'src/app/shared/components/base-resource-list/base-resource-list.component';
 import { Order } from '../shared/order.model';
 import { OrderService } from '../shared/order.service';
@@ -10,7 +10,7 @@ import { OrderService } from '../shared/order.service';
 })
 export class OrderListComponent extends BaseResourceListComponent<Order>{
 
-  constructor(protected orderService: OrderService) {
+  constructor(private orderService: OrderService) {
     super(orderService);
   }
 
