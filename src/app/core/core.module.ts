@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
 
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDatabase } from "../in-memory-database";
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDatabase } from "../in-memory-database";
-
 @NgModule({
-  declarations: [ NavbarComponent ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -21,11 +18,16 @@ import { InMemoryDatabase } from "../in-memory-database";
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase),
     RouterModule
   ],
+  declarations: [
+    NavbarComponent
+  ],
   exports: [
+    // shared modules
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    //shared components
+
+    // shared components
     NavbarComponent
   ]
 })

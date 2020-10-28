@@ -1,11 +1,10 @@
-import { constructor } from "moment";
-import { BaseResourceModel } from "src/app/shared/models/base-resource.model";
-import { Item } from '../../items/shared/Item.model';
+import { BaseResourceModel } from "../../../shared/models/base-resource.model";
 
 export class Store extends BaseResourceModel {
-  constructor(public id?: number,
-    public items?: Item[]
-  ) {
+  constructor(
+    public id?: number,
+    public name?: string,
+    public description?: string) {
     super();
   }
 

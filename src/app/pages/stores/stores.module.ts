@@ -3,10 +3,11 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { StoresRoutingModule } from './stores-routing.module';
 import { StoreFormComponent } from './store-form/store-form.component';
+import { StoreListComponent } from './store-list/store-list.component';
 
 
 @NgModule({
-  declarations: [ StoreFormComponent ],
+  declarations: [ StoreFormComponent, StoreListComponent ],
   imports: [
     SharedModule,
     StoresRoutingModule

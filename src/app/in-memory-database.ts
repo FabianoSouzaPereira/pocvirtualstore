@@ -1,5 +1,7 @@
-import { Injectable, Injector } from '@angular/core';
 import { InMemoryDbService } from "angular-in-memory-web-api";
+import { Injectable, Injector } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+
 import { getMaxListeners } from 'process';
 import { Cart } from './pages/carts/shared/cart.model';
 
@@ -32,7 +34,8 @@ export class InMemoryDatabase implements InMemoryDbService {
     ];
 
     const stores: Store[] = [
-
+      { id: 1, name: 'Teste', description: 'teste' },
+      { id: 2, name: 'Teste2', description: 'teste2' }
     ];
     const purchases: Purchase[] = [];
 

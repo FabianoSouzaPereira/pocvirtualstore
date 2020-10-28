@@ -19,7 +19,6 @@ import { ItemsModule } from './pages/items/items.module';
   ],
   imports: [
     CoreModule,
-    SharedModule,
     AppRoutingModule,
     LoginsModule,
     UsersModule,
