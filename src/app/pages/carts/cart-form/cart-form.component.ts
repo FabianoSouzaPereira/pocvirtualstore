@@ -12,11 +12,7 @@ export class CartFormComponent extends BaseResourceFormComponent<Cart> {
 
 
   constructor(protected cartService: CartService, protected injector: Injector) {
-<<<<<<< HEAD
-    super(injector, new Cart, cartService, Cart.fromJson);
-=======
     super(injector, new Cart(), cartService, Cart.fromJson);
->>>>>>> pages_templates
   }
 
   protected buildResourceForm(): void {
