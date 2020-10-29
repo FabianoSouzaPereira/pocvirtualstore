@@ -29,11 +29,11 @@ export class UserFormComponent extends BaseResourceFormComponent<User> {
   }
 
   protected creationPageTitle(): string {
-    return "Cadastro de Nova Categoria";
+    return "Cadastro de Novo Usuário";
   }
 
   protected editionPageTitle(): string {
     const userEmail = this.resource.email || "";
-    return "Editando Categoria: " + userEmail;
+    return "Editando Usuário: " + userEmail;
   }
 }

@@ -28,9 +28,9 @@ export class InMemoryDatabase implements InMemoryDbService {
     ];
 
     const users: User[] = [
-      { id: 1, email: 'jefe@gmail.com', password: '1234', address: 'Rua Saraiva, 22', address2: 'Inexistente', city: 'São Paulo', state: 'São Paulo', zipcode: '56932-442' } as User,
-      { id: 2, email: 'lucas@gmail.com', password: '4321', address: 'Rua Ipópito, 2312', address2: 'Alamenda Leste, 3232 ', city: 'São Vicente', state: 'São Paulo', zipcode: '56936-344' } as User,
-      { id: 3, email: 'ernesto@gmail.com', password: '5678', address: 'Rua Ventania, 3029', address2: 'Rua dos Anjos, 1212', city: 'São Bernado', state: 'São Paulo', zipcode: '56935-463' } as User
+      { id: 1, email: 'jefe@gmail.com', password: '123456', address: 'Rua Saraiva, 22', address2: 'Inexistente', city: 'São Paulo', state: 'São Paulo', zipcode: '56932-442' } as User,
+      { id: 2, email: 'lucas@gmail.com', password: '432156', address: 'Rua Ipópito, 2312', address2: 'Alamenda Leste, 3232 ', city: 'São Vicente', state: 'São Paulo', zipcode: '56936-344' } as User,
+      { id: 3, email: 'ernesto@gmail.com', password: '567856', address: 'Rua Ventania, 3029', address2: 'Rua dos Anjos, 1212', city: 'São Bernado', state: 'São Paulo', zipcode: '56935-463' } as User
     ];
 
     const stores: Store[] = [

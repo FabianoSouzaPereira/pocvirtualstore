@@ -6,6 +6,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { FormFieldErrorComponent } from './components/form-field-error/form-field-error.component';
 import { ServerErrorMessagesComponent } from './components/server-error-messages/server-error-messages.component';
+import { ImgComponent } from './components/image-field/img/img.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ServerErrorMessagesComponent } from './components/server-error-messages
     BreadCrumbComponent,
     PageHeaderComponent,
     FormFieldErrorComponent,
-    ServerErrorMessagesComponent
+    ServerErrorMessagesComponent,
+    ImgComponent
   ],
   exports: [
     // shared modules
