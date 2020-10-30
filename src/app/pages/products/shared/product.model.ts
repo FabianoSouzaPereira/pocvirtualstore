@@ -9,6 +9,7 @@ export class Product extends BaseResourceModel {
     public name?: string,
     public description?: string,
     public type?: string,
+    public details?: string,
     public qty?: number,
     public price?: number,
     public date?: string,

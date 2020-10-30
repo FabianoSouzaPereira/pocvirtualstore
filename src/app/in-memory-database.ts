@@ -50,10 +50,10 @@ export class InMemoryDatabase implements InMemoryDbService {
       { id: 1, number: 10002, userId: users[ 2 ].id, user: users[ 2 ], paid: true, type: "nosend", date: "29/11/2018", amount: "250.00" } as Order,
     ];
     const products: Product[] = [
-      { id: 1, name: 'Relógio sharp', description: 'Relógio de pulso', price: 123.58, qty: 32, type: 'Full', categoryId: categories[ 2 ].id, category: categories[ 2 ], date: "28/11/2018", picture: '../assets/relogiopulso001.jpg' } as Product,
-      { id: 2, name: 'Celular', description: 'Celular Nokia', price: 822.48, qty: 12, type: 'Full', categoryId: categories[ 1 ].id, category: categories[ 1 ], date: "28/11/2018", picture: '../assets/celular001.jpg' } as Product,
-      { id: 3, name: 'Computador Desktop', description: 'Computador Desktop Panasonic', price: 4183.50, qty: 10, type: 'Full', categoryId: categories[ 3 ].id, category: categories[ 3 ], date: "28/11/2018", picture: '../assets/desktop001.jpg' } as Product,
-      { id: 4, name: 'Tablet', description: 'Tablet samsung', price: 523.12, qty: 8, type: 'Full', categoryId: categories[ 2 ].id, category: categories[ 2 ], date: "28/11/2018", picture: '../assets/tablet001.jpg' } as Product
+      { id: 1, name: 'Relógio sharp', description: 'Relógio de pulso', price: 123.58, qty: 32, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 1 ].id, category: categories[ 1 ], date: "28/11/2018", picture: '../assets/relogiopulso001.jpg' } as Product,
+      { id: 2, name: 'Celular', description: 'Celular Nokia', price: 822.48, qty: 12, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 0 ].id, category: categories[ 0 ], date: "28/11/2018", picture: '../assets/celular001.jpg' } as Product,
+      { id: 3, name: 'Computador Desktop', description: 'Computador Desktop Panasonic', price: 4183.50, qty: 10, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 3 ].id, category: categories[ 3 ], date: "28/11/2018", picture: '../assets/desktop001.jpg' } as Product,
+      { id: 4, name: 'Tablet', description: 'Tablet samsung', price: 523.12, qty: 8, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 4 ].id, category: categories[ 4 ], date: "28/11/2018", picture: '../assets/tablet001.jpg' } as Product
     ];
     const items: Item[] = [
       // { id: 1, number: orders[ 1 ].number, orderId: orders[ 1 ].id, order: orders[ 1 ], productId: products[ 1 ].id, product: products[ 1 ] }

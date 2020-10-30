@@ -28,11 +28,11 @@ export class ProductFormComponent extends BaseResourceFormComponent<Product> imp
       id: [ null ],
       name: [ null, [ Validators.required, Validators.minLength(2) ] ],
       description: [ null ],
-      type: [ null, [ Validators.required ] ],
+      type: [ null ],
       qty: [ null ],
       price: [ null ],
-      date: [ null, [ Validators.required ] ],
-      categoryId: [ null, [ Validators.required ] ],
+      date: [ null ],
+      categoryId: [ null ],
       picture: [ null ],
     });
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
+import * as CryptoJS from 'crypto-js';
 import { BaseResourceFormComponent } from '../../../shared/components/base-resource-form/base-resource-form.component';
 import { User } from '../shared/user.model';
-import * as CryptoJS from 'crypto-js';
 import { UserService } from '../shared/user.service';
 import { Validators } from "@angular/forms";
 
@@ -11,7 +11,7 @@ import { Validators } from "@angular/forms";
   styleUrls: [ './user-form.component.css' ]
 })
 export class UserFormComponent extends BaseResourceFormComponent<User> {
-  dataToEncrypt: any = { password: this.resourceForm.get('password') };
+  dataToEncrypt: any = { password: "" };
   encryptedData: string = '';
   secretkey: string = this.dataToEncrypt;
 

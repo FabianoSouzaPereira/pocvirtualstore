@@ -6,19 +6,30 @@
 
 
 <table class="table table-hover">
-  <thead>
-    <tr class="bg-primary text-light">
-      <th>Produto</th>
+  <thead class="">
+    <tr class="bg-secondary text-light">
+      <th class="">Produto</th>
       <th>Ações</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of resources">
-      <td>
-        <strong>{{product.name}}</strong><br>
-        <small>{{product.description}}</small>
+    <tr *ngFor="let product of resources" class="form-group row row-col-12">
+      <td class="col-10 col-md-10 col-sm-10">
+        <div class="float-left col-6 col-md-4 col-sm-8">
+          <img src={{product.picture}} name="picture" class="text-left rounded img-fluid img-thumbnail" alt="...">
+        </div>
+        <div class="d-inline float-left  col-4  col-sm-4 col-md-4">
+          <strong>{{product.name}}</strong><br>
+          <small>{{product.description}}</small><br>
+          <small>Preço R${{product.price}}</small><br>
+          <small>Estoque {{product.qty}} un</small><br><br>
+          Detalhes do produto<br>
+          <small>{{product.details}}</small><br>
+          Categoria:
+          <small>{{product.category.name}}</small>
+        </div>
       </td>
-      <td>
+      <td class="col-2 col-sm-2 col-md-2">
         <a [routerLink]="[product.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
         <button (click)="deleteResource(product)" class="btn btn-outline-danger btn-sm">Excluir</button>
       </td>

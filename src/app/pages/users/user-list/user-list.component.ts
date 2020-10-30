@@ -14,5 +14,4 @@ export class UserListComponent extends BaseResourceListComponent<User> {
     super(userService);
   }
 
-
 }
