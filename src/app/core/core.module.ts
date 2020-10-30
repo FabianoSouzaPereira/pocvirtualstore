@@ -7,7 +7,8 @@ import { RouterModule } from "@angular/router";
 
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDatabase } from "../in-memory-database";
-import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterModule
   ],
   declarations: [
-    NavbarComponent
+    // NavbarComponent,
+    AuthenticationComponent
   ],
   exports: [
     // shared modules
@@ -28,7 +30,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
 
     // shared components
-    NavbarComponent
+    // NavbarComponent
   ]
 })
 export class CoreModule { }

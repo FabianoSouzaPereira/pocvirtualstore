@@ -11,4 +11,18 @@ export class LoginService extends BaseResourceService<Login> {
     super("api/logins", injector, Login.fromJson);
   }
 
+  login(user: any) {
+    return new Promise((resolve) => {
+      window.localStorage.setItem('token', 'meu-token');
+      resolve(true);
+    });
+  }
+
+  createAccount(account: any) {
+    return new Promise((resolve) => {
+      resolve(true);
+    });
+  }
+
+
 }

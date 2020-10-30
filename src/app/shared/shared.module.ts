@@ -7,6 +7,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { FormFieldErrorComponent } from './components/form-field-error/form-field-error.component';
 import { ServerErrorMessagesComponent } from './components/server-error-messages/server-error-messages.component';
 import { ImgComponent } from './components/image-field/img/img.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ImgComponent } from './components/image-field/img/img.component';
     PageHeaderComponent,
     FormFieldErrorComponent,
     ServerErrorMessagesComponent,
-    ImgComponent
+    ImgComponent,
+    NavbarComponent
   ],
   exports: [
     // shared modules
@@ -31,7 +33,8 @@ import { ImgComponent } from './components/image-field/img/img.component';
     BreadCrumbComponent,
     PageHeaderComponent,
     FormFieldErrorComponent,
-    ServerErrorMessagesComponent
+    ServerErrorMessagesComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }

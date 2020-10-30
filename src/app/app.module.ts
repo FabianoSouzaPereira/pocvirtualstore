@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginsModule } from './pages/logins/logins.module';
+import { LoginsModule } from './core/guards/login/logins.module';
 import { UsersModule } from './pages/users/users.module';
 import { PurchasesModule } from './pages/purchases/purchases.module';
 import { ProductsModule } from './pages/products/products.module';
@@ -11,10 +11,12 @@ import { CategoriesModule } from './pages/categories/categories.module';
 import { CartsModule } from './pages/carts/carts.module';
 import { StoresModule } from './pages/stores/stores.module';
 import { ItemsModule } from './pages/items/items.module';
+import { NotfoundModule } from './pages/notfound/notfound.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     CoreModule,
@@ -27,7 +29,8 @@ import { ItemsModule } from './pages/items/items.module';
     CategoriesModule,
     CartsModule,
     StoresModule,
-    ItemsModule
+    ItemsModule,
+    NotfoundModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

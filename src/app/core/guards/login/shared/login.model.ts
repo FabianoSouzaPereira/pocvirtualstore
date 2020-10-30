@@ -6,6 +6,7 @@ export class Login extends BaseResourceModel {
     public id?: number,
     public email?: string,
     public password?: string,
+    public token?: string,
   ) {
     super();
   }

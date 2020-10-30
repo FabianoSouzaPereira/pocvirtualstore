@@ -1,0 +1,29 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first mt-5 mx-5 mt-5 p-5 fillColor">
+      <img src="../../../assets/padlockclose.svg" id="icon" class="text-danger" alt="Icone usuário" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="resourceForm" (submit)="submitForm()" #form="ngForm">
+      <input type="text" id="login" class="fadeIn second" name="email" formControlName="email" [(ngModel)]="login.email"
+        placeholder="Usuário">
+      <app-form-field-error [form-control]="resourceForm.get('email')"></app-form-field-error>
+      <input type="text" id="password" class="fadeIn third" name="password" formControlName="password"
+        [(ngModel)]="login.password" placeholder="Senha">
+      <app-form-field-error [form-control]="resourceForm.get('password')"></app-form-field-error>
+
+      <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
+      <input [disabled]="submittingForm || resourceForm.invalid" type="submit" class="fadeIn fourth" value="Entrar">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/forgotpw">Esqueceu a senha ?</a>
+    </div>
+
+  </div>
+</div>

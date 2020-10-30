@@ -11,8 +11,9 @@ import { User } from './pages/users/shared/user.model';
 import { Item } from './pages/items/shared/Item.model';
 import { Cart } from './pages/carts/shared/cart.model';
 import { Product } from './pages/products/shared/product.model';
-import { Login } from './pages/logins/shared/login.model';
+
 import { Purchase } from './pages/purchases/shared/purchase.model';
+import { Login } from './core/guards/login/shared/login.model';
 
 @Injectable({
   providedIn: 'root'
@@ -59,10 +60,11 @@ export class InMemoryDatabase implements InMemoryDbService {
       //   { id: 2, number: orders[ 1 ].number, orderId: orders[ 1 ].id, order: orders[ 1 ], productId: products[ 3 ].id, product: products[ 3 ] },
     ];
 
-    const login: Login[] = [
-      //   {}
+    const logins: Login[] = [
+      { id: 1, email: "teste@email.com", password: "123456", token: "7c4a8d09ca3762af61e59520943dc26494f8941b" },
+      { id: 2, email: "teste2@email.com", password: "654321", token: "dd5fef9c1c1da1394d6d34b248c51be2ad740840" }
     ];
 
-    return { categories, users, stores, orders, carts, products, items, login }
+    return { categories, users, stores, orders, carts, products, items, logins }
   }
 }
