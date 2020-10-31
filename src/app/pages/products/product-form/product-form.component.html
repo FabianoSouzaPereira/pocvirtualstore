@@ -2,7 +2,7 @@
 <app-bread-crumb [items]="[{text: 'Produto', link: '/products'}, {text: pageTitle}]">
 </app-bread-crumb>
 
-<app-page-header page-title="Cadastro produto"></app-page-header>
+<app-page-header [page-title]="pageTitle"></app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()" class="px-5 pb-5">
   <div class="form-group col-md-12">
@@ -31,6 +31,7 @@
   </div>
   <div class="d-inline-block form-group col-md-3">
     <label for="type">Tipo</label>
+
     <select name="type" id="type" formControlName="type" class="form-control">
       <option *ngFor="let option of typeOptions" [value]="option.value">{{ option.text }}</option>
     </select>
@@ -47,17 +48,16 @@
   </div>
   <div class="form-group col-md-3">
     <label for="date">Data</label>
-    <input type="text" class="form-control" formControlName="date" id="date" placeholder="Descrição">
+    <input type="text" class="form-control" formControlName="date" id="date" placeholder="Data">
   </div>
-  <div class="text-center col-md-3">
-    <!-- <div *ngFor="let picture of resource">
-      <img src={{ resource.picture }} name="picture" formControlName="picture" class="rounded img-fluid img-thumbnail"
-        alt="...">
-    </div> -->
+  <div class="p-4  text-center col-md-3 border">
+    <div *ngFor="let product of resource" class="form-control">
+      <img src={{product.picture}} name="picture" class="rounded img-fluid img-thumbnail" alt="imagem">
+    </div>
   </div>
   <div class="form-group">
-    <label for="File1">Exemplo de input de arquivo</label>
-    <input type="file" class="form-control-file" id="File1">
+    <label for="File1">Adicionar imagem</label>
+    <input type="file" class="form-control-file" id="File1" formControlName="picture">
   </div>
   <button [disabled]="submittingForm || resourceForm.invalid " type="submit" class="btn btn-primary">Salvar</button>
 </form>
