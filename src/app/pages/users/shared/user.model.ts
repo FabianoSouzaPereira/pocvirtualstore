@@ -9,7 +9,8 @@ export class User extends BaseResourceModel {
     public address2?: string,
     public city?: string,
     public state?: string,
-    public zipcode?: string
+    public zipcode?: string,
+    public sendemails?: boolean
   ) {
     super();
   }

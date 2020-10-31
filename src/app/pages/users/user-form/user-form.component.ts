@@ -24,7 +24,8 @@ export class UserFormComponent extends BaseResourceFormComponent<User> {
       address2: [ null ],
       city: [ null ],
       state: [ null ],
-      zipcode: [ null, [ Validators.required, Validators.minLength(8) ] ]
+      zipcode: [ null, [ Validators.required, Validators.minLength(8) ] ],
+      sendemails: [ null ]
     });
   }
 

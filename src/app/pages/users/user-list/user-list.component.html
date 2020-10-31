@@ -11,13 +11,21 @@
     <tr class="bg-secondary text-light">
       <th>Email</th>
       <th>Cidade</th>
+      <th>Cep</th>
+      <th>Ação</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of resources">
       <td>
-        <strong>{{user.email}}</strong><br>
-        <small>{{user.city}}</small>
+        <strong>{{user.email}}</strong>
+
+      </td>
+      <td>
+        {{user.city}}
+      </td>
+      <td>
+        {{user.zipcode}}
       </td>
       <td>
         <a [routerLink]="[user.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>

@@ -1,16 +1,24 @@
-import { TestBed } from '@angular/core/testing';
+// Http testing module and mocking controller
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { AuthGuard } from './auth.guard';
+// Other imports
+import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 describe('AuthGuard', () => {
-  let guard: AuthGuard;
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    guard = TestBed.inject(AuthGuard);
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
+
+    // Inject the http service and test controller for each test
+    httpClient = TestBed.get(HttpClient);
+    httpTestingController = TestBed.get(HttpTestingController);
   });
 
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
+  it('works', () => {
   });
 });
