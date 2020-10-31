@@ -25,5 +25,13 @@ export class OrderFormComponent extends BaseResourceFormComponent<Order> {
     });
   }
 
+  protected creationPageTitle(): string {
+    return "Cadastro de Novo Lançamento";
+  }
+
+  protected editionPageTitle(): string {
+    const resourceName = this.resource.number || "";
+    return "Editando Lançamento: " + resourceName;
+  }
 
 }

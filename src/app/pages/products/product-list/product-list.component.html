@@ -4,7 +4,6 @@
 <app-page-header page-title="Produtos" button-text="+ Novo Produto" button-link="new" button-class="btn-success">
 </app-page-header>
 
-
 <table class="table table-hover">
   <thead class="">
     <tr class="bg-secondary text-light">
@@ -23,10 +22,11 @@
           <small>{{product.description}}</small><br>
           <small>Preço R${{product.price}}</small><br>
           <small>Estoque {{product.qty}} un</small><br><br>
-          Detalhes do produto<br>
-          <small>{{product.details}}</small><br>
+          Detalhes do produto:<br>
+          <small>{{product.details}}</small><br><br>
           Categoria:
-          <small>{{product.category.name}}</small>
+          <small>{{product.category.name}}</small><br>
+          <small>{{product.date}}</small>
         </div>
       </td>
       <td class="col-2 col-sm-2 col-md-2">

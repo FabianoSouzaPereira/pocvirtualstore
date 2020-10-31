@@ -2,6 +2,8 @@
 <app-bread-crumb [items]="[{text: 'Usuário', link: '/users'}, {text: pageTitle}]">
 </app-bread-crumb>
 
+<app-page-header [page-title]="pageTitle"></app-page-header>
+
 <form [formGroup]="resourceForm" (submit)="submitForm()" class="px-5 pb-5">
   <div class="form-row">
     <div class="form-group col-md-6">

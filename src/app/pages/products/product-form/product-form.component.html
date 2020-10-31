@@ -27,13 +27,15 @@
   <div class="d-inline-block form-group col-md-3">
     <label for="Qty">Quantidade</label>
     <input type="text" class="form-control" id="Qty" formControlName="qty" placeholder="0">
+    <app-form-field-error [form-control]="resourceForm.get('qty')"></app-form-field-error>
   </div>
   <div class="d-inline-block form-group col-md-3">
-    <label for="type">Select de exemplo</label>
-    <select class="form-control" formControlName="type" id="type">
-      <option>completo</option>
-      <option>incompleto</option>
+    <label for="type">Tipo</label>
+    <select name="type" id="type" formControlName="type" class="form-control">
+      <option *ngFor="let option of typeOptions" [value]="option.value">{{ option.text }}</option>
     </select>
+
+    <app-form-field-error [form-control]="resourceForm.get('type')"></app-form-field-error>
   </div>
   <div class="form-group col-md-12">
     <label for="details">Detalhes do produto</label>
@@ -48,13 +50,10 @@
     <input type="text" class="form-control" formControlName="date" id="date" placeholder="Descrição">
   </div>
   <div class="text-center col-md-3">
-    <!-- ​<picture>
-      <source srcset="..." type="image/svg+xml"> -->
-    <div *ngFor="let picture of resource">
+    <!-- <div *ngFor="let picture of resource">
       <img src={{ resource.picture }} name="picture" formControlName="picture" class="rounded img-fluid img-thumbnail"
         alt="...">
-      <!-- </picture> -->
-    </div>
+    </div> -->
   </div>
   <div class="form-group">
     <label for="File1">Exemplo de input de arquivo</label>

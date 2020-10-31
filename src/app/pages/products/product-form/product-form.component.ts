@@ -16,11 +16,11 @@ export class ProductFormComponent extends BaseResourceFormComponent<Product> imp
   categories: Array<Category>;
 
   constructor(
-    protected productsSevice: ProductService,
+    protected productSevice: ProductService,
     protected categoryService: CategoryService,
     protected injector: Injector
   ) {
-    super(injector, new Product(), productsSevice, Product.fromJson);
+    super(injector, new Product(), productSevice, Product.fromJson);
   }
 
   protected buildResourceForm(): void {
@@ -29,10 +29,12 @@ export class ProductFormComponent extends BaseResourceFormComponent<Product> imp
       name: [ null, [ Validators.required, Validators.minLength(2) ] ],
       description: [ null ],
       type: [ null ],
+      details: [ null ],
       qty: [ null ],
       price: [ null ],
       date: [ null ],
       categoryId: [ null ],
+      category: [ null ],
       picture: [ null ],
     });
   }
@@ -40,6 +42,17 @@ export class ProductFormComponent extends BaseResourceFormComponent<Product> imp
   ngOnInit() {
     this.loadCategories();
     super.ngOnInit();
+  }
+
+  get typeOptions(): Array<any> {
+    return Object.entries(Product.types).map(
+      ([ value, text ]) => {
+        return {
+          text: text,
+          value: value
+        }
+      }
+    )
   }
 
   private loadCategories() {

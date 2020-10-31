@@ -16,7 +16,9 @@ export class CartFormComponent extends BaseResourceFormComponent<Cart> {
   }
 
   protected buildResourceForm(): void {
-    throw new Error('Method not implemented.');
+    this.resourceForm = this.formBuilder.group({
+      id: [ null ]
+    });
   }
 
 }
