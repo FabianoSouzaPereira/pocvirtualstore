@@ -34,11 +34,6 @@ export class InMemoryDatabase implements InMemoryDbService {
       { id: 3, email: 'ernesto@gmail.com', password: '567856', address: 'Rua Ventania, 3029', address2: 'Rua dos Anjos, 1212', city: 'São Bernado', state: 'São Paulo', zipcode: '56935-463', sendemails: true } as User
     ];
 
-    const stores: Store[] = [
-      { id: 1, name: 'Teste', description: 'teste' },
-      { id: 2, name: 'Teste2', description: 'teste2' }
-    ];
-
     const purchases: Purchase[] = [];
 
     const carts: Cart[] = [
@@ -50,6 +45,7 @@ export class InMemoryDatabase implements InMemoryDbService {
       { id: 1, number: 10002, userId: users[ 2 ].id, user: users[ 2 ], paid: true, type: "nosend", date: "29/11/2018", amount: "250.00" } as Order,
     ];
     const products: Product[] = [
+      { id: 0 },
       { id: 1, name: 'Relógio sharp', description: 'Relógio de pulso', price: 123.58, qty: 32, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 1 ].id, category: categories[ 1 ], date: "28/11/2018", picture: '../assets/relogiopulso001.jpg' } as Product,
       { id: 2, name: 'Celular', description: 'Celular Nokia', price: 822.48, qty: 12, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 0 ].id, category: categories[ 0 ], date: "28/11/2018", picture: '../assets/celular001.jpg' } as Product,
       { id: 3, name: 'Computador Desktop', description: 'Computador Desktop Panasonic', price: 4183.50, qty: 10, type: 'Full', details: 'Texto referente ao detalhes do produto...', categoryId: categories[ 3 ].id, category: categories[ 3 ], date: "28/11/2018", picture: '../assets/desktop001.jpg' } as Product,
@@ -59,7 +55,20 @@ export class InMemoryDatabase implements InMemoryDbService {
       // { id: 1, number: orders[ 1 ].number, orderId: orders[ 1 ].id, order: orders[ 1 ], productId: products[ 1 ].id, product: products[ 1 ] }
       //   { id: 2, number: orders[ 1 ].number, orderId: orders[ 1 ].id, order: orders[ 1 ], productId: products[ 3 ].id, product: products[ 3 ] },
     ];
-
+    const stores: Store[] = [
+      { id: 1, name: 'teste1', description: '', productId: products[ 1 ].id, product: products[ 1 ] } as Store,
+      { id: 2, name: 'teste2', description: '', productId: products[ 2 ].id, product: products[ 2 ] } as Store,
+      { id: 3, name: 'teste3', description: '', productId: products[ 3 ].id, product: products[ 3 ] } as Store,
+      { id: 4, name: 'teste4', description: '', productId: products[ 4 ].id, product: products[ 4 ] } as Store,
+      { id: 5, name: 'teste5', description: '', productId: products[ 1 ].id, product: products[ 1 ] } as Store,
+      { id: 6, name: 'teste6', description: '', productId: products[ 2 ].id, product: products[ 2 ] } as Store,
+      { id: 7, name: 'teste7', description: '', productId: products[ 3 ].id, product: products[ 3 ] } as Store,
+      { id: 8, name: 'teste8', description: '', productId: products[ 4 ].id, product: products[ 4 ] } as Store,
+      { id: 9, name: 'teste9', description: '', productId: products[ 1 ].id, product: products[ 1 ] } as Store,
+      { id: 10, name: 'teste10', description: '', productId: products[ 2 ].id, product: products[ 2 ] } as Store,
+      { id: 11, name: 'teste11', description: '', productId: products[ 3 ].id, product: products[ 3 ] } as Store,
+      { id: 12, name: 'teste12', description: '', productId: products[ 4 ].id, product: products[ 4 ] } as Store,
+    ];
     const logins: Login[] = [
       { id: 1, email: "teste@email.com", password: "123456", token: "7c4a8d09ca3762af61e59520943dc26494f8941b" },
       { id: 2, email: "teste2@email.com", password: "654321", token: "dd5fef9c1c1da1394d6d34b248c51be2ad740840" }
