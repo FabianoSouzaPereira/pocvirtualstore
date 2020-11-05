@@ -19,6 +19,10 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     this.http = injector.get(HttpClient);
   }
 
+  /** Generic method that requests and converts all Json data into "api" request.
+   *  This method uses the bind method that keeps "this" as the initial context.
+   *  Preventing that "this" from going to another context.
+  */
   getAll(): Observable<T[]> {
     return this.http.get(this.apiPath).pipe(
       map(this.jsonDataToResources.bind(this)),

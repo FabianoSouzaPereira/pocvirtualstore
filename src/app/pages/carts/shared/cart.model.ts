@@ -1,8 +1,12 @@
-import { BaseResourceModel } from "../../..//shared/models/base-resource.model";
+import { BaseResourceModel } from "../../../shared/models/base-resource.model";
+import { Order } from '../../orders/shared/order.model';
 
 export class Cart extends BaseResourceModel {
   constructor(
-    public id?: number
+    public id?: number,
+    public name?: string,
+    public orderId?: number,
+    public order?: Order
   ) {
     super();
   }

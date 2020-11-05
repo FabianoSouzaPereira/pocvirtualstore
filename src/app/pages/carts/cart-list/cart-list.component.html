@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<app-bread-crumb [items]="[{text: 'Lista de Compras'}]"></app-bread-crumb>
+
+<app-page-header page-title="Lista de Compras no Carrinho"></app-page-header>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="bg-secondary text-light">
+      <th>Carrinho</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cart of resources" class="form-group row row-col-12">
+      <td class="col-10 col-md-10 col-sm-10">
+        <div class="float-left col-6 col-md-4 col-sm-8">
+          <small *ngIf="cart.order">{{cart.order.number}}</small>
+          <img [src]="cart.order?.item?.product?.picture" name="picture"
+            class="text-left rounded img-fluid img-thumbnail" alt="imagem">
+        </div>
+        <div class="d-inline float-left  col-4  col-sm-4 col-md-4">
+          <strong>{{cart.name}}</strong><br>
+          <strong>{{cart.orderId}}</strong><br>
+          <strong *ngIf="cart.order">{{cart.order.number}}</strong><br>
+          <strong *ngIf="cart.order">{{cart.order.paid}}</strong><br>
+        </div>
+      </td>
+      <td class="col-2 col-sm-2 col-md-2">
+        <a [routerLink]="[cart.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <button (click)="deleteResource(cart)" class="btn btn-outline-danger btn-sm">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

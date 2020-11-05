@@ -7,7 +7,7 @@ import { StoreFormComponent } from './store-form/store-form.component';
 const routes: Routes = [
   { path: '', component: StoreListComponent },
   { path: 'new', component: StoreFormComponent },
-  { path: ':id/edit', component: StoreFormComponent }
+  { path: ':id/edit', component: StoreFormComponent },
 ];
 
 @NgModule({

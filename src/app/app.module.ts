@@ -13,7 +13,6 @@ import { StoresModule } from './pages/stores/stores.module';
 import { ItemsModule } from './pages/items/items.module';
 import { NotfoundModule } from './pages/notfound/notfound.module';
 
-
 @NgModule({
   declarations: [
     AppComponent

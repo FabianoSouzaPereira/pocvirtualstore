@@ -12,9 +12,10 @@ import { BaseResourceService } from '../../services/base-resource.service';
 @Injectable({
   providedIn: 'root'
 })
+/** Base class that receives in T (class that will receive the resources) extended from the class Base model */
 export abstract class BaseResourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
 
-  currentAction: string;
+  currentAction: string; s
   resourceForm: FormGroup;
   pageTitle: string;
   serverErrorMessages: string[] = null;

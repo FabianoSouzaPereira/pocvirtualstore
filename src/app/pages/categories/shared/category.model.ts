@@ -9,7 +9,7 @@ export class Category extends BaseResourceModel {
     super();
   }
 
-
+  /** Convert Json object to Category type object */
   static fromJson(jsonData: any): Category {
     return Object.assign(new Category(), jsonData);
   }

@@ -17,7 +17,10 @@ export class CartFormComponent extends BaseResourceFormComponent<Cart> {
 
   protected buildResourceForm(): void {
     this.resourceForm = this.formBuilder.group({
-      id: [ null ]
+      id: [ null ],
+      name: [ null ],
+      orderId: [ null ],
+      order: [ null ]
     });
   }
 

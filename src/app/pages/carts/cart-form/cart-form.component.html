@@ -1,3 +1,9 @@
 <app-navbar></app-navbar>
 <app-bread-crumb [items]="[{text: 'Carrinho', link: '/carts'}, {text: pageTitle}]"></app-bread-crumb>
 <p>cart-form works!</p>
+<form [formGroup]="resourceForm" (submit)="submitForm()" class="px-5 pb-5">
+
+
+  <button [disabled]="submittingForm || resourceForm.invalid " type="submit" class="btn btn-primary">Finalizar
+    Compras</button>
+</form>
