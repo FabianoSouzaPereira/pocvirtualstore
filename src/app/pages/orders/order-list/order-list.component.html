@@ -9,7 +9,7 @@
     <tr class="bg-secondary text-light">
       <th>Order</th>
       <th>Cliente</th>
-      <th>Pagamento</th>
+      <th>Status</th>
       <th class="text-center">Data</th>
       <th class="text-center">Valor R$</th>
       <th class="text-center">Ação</th>
@@ -24,14 +24,15 @@
       <td>
         <small *ngIf="order.user">{{order.user.email}}</small>
       </td>
-      <td [class.text-success]="order.type == 'send'" [class.text-danger]="order.type == 'nosend'">
+      <td [class.text-success]="order.type == 'paid'" [class.text-danger]="order.type == 'buy'">
         {{order.paidText}}
       </td>
       <td class="text-center">
-        <small class="text-success">{{order.date}}</small><br>
+        <small>{{order.date}}</small><br>
       </td>
       <td class="text-center">
-        <small class="text-success">{{order.amount}}</small><br>
+        <small [class.text-success]="order.type == 'paid'"
+          [class.text-danger]="order.type == 'buy'">{{order.amount}}</small><br>
       </td>
       <td class="text-center">
         <a [routerLink]="[order.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>

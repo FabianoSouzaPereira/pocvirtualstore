@@ -53,9 +53,9 @@ export class InMemoryDatabase implements InMemoryDbService {
     ];
 
     const orders: Order[] = [
-      { id: 1, number: 10001, userId: users[ 0 ].id, user: users[ 0 ], itemId: items[ 0 ].id, item: items[ 0 ], paid: false, type: "send", date: "28/11/2018", amount: "200.00" } as Order,
-      { id: 2, number: 10002, userId: users[ 1 ].id, user: users[ 1 ], itemId: items[ 1 ].id, item: items[ 1 ], paid: true, type: "nosend", date: "29/11/2018", amount: "250.00" } as Order,
-      { id: 3, number: 10003, userId: users[ 2 ].id, user: users[ 2 ], itemId: items[ 2 ].id, item: items[ 2 ], paid: true, type: "nosend", date: "30/11/2018", amount: "260.00" } as Order
+      { id: 1, number: 10001, userId: users[ 0 ].id, user: users[ 0 ], itemId: items[ 0 ].id, item: items[ 0 ], paid: false, type: "buy", date: "28/11/2018", amount: "200.00" } as Order,
+      { id: 2, number: 10002, userId: users[ 1 ].id, user: users[ 1 ], itemId: items[ 1 ].id, item: items[ 1 ], paid: true, type: "paid", date: "29/11/2018", amount: "250.00" } as Order,
+      { id: 3, number: 10003, userId: users[ 2 ].id, user: users[ 2 ], itemId: items[ 2 ].id, item: items[ 2 ], paid: true, type: "paid", date: "30/11/2018", amount: "260.00" } as Order
     ];
 
     const stores: Store[] = [

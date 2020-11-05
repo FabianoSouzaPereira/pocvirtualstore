@@ -19,8 +19,8 @@ export class Order extends BaseResourceModel {
   }
 
   static types = {
-    send: 'Enviar',
-    nosend: 'Aguardar'
+    paid: 'Pago',
+    buy: 'Pendente'
   };
 
   static fromJson(jsonData: any): Order {
