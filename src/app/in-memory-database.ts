@@ -23,9 +23,10 @@ export class InMemoryDatabase implements InMemoryDbService {
     const categories: Category[] = [
       { id: 1, name: 'Celular', description: 'Mobile debloqueado' },
       { id: 2, name: 'Relógio Pulso', description: 'Smart Clock' },
-      { id: 3, name: 'Computador Desktop', description: 'Com licença Windows' },
-      { id: 4, name: 'NoteBook', description: 'Com licença Linux' },
-      { id: 5, name: 'Tablet', description: '7 e 10 Polegadas' }
+      { id: 3, name: 'Computador Desktop Windows', description: 'Com licença Windows' },
+      { id: 4, name: 'Computador Desktop Linux', description: 'Licença livre' },
+      { id: 5, name: 'NoteBook', description: 'Com licença Linux' },
+      { id: 6, name: 'Tablet', description: '7 e 10 Polegadas' }
     ];
 
     const users: User[] = [
