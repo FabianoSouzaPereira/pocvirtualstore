@@ -9,7 +9,7 @@ import { Order } from './order.model';
 export class OrderService extends BaseResourceService<Order> {
 
   constructor(protected injector: Injector) {
-    super("api/orders", injector, Order.fromJson);
+    super("orders", injector, Order.fromJson);
   }
 
 }

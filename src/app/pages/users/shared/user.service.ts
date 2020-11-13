@@ -1,6 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { User } from './user.model';
 import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { BaseResourceService } from 'src/app/shared/services/base-resource.servi
 export class UserService extends BaseResourceService<User> {
 
   constructor(protected injector: Injector) {
-    super("api/users", injector, User.fromJson);
+    super("users", injector, User.fromJson);
   }
 
 }

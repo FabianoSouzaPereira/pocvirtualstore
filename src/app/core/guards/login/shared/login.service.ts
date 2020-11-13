@@ -5,10 +5,10 @@ import { Login } from './login.model';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService extends BaseResourceService<Login> {
+export class LoginService {
 
   constructor(protected injector: Injector) {
-    super("api/users", injector, Login.fromJson);
+    super("users", injector, Login.fromJson);
   }
 
   login(user: any) {

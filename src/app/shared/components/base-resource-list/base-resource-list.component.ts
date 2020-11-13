@@ -16,7 +16,11 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel> imp
   ngOnInit() {
     this.resourceService.getAll().subscribe(
       resources => this.resources = resources.sort((a, b) => b.id - a.id),
-      error => alert('Erro ao carregar a lista')
+      //error => alert('Erro ao carregar a lista')
+      error => {
+        console.log('Erro ao carregar a lista', error);
+        alert('Erro ao carregar a lista');
+      }
     )
   }
 
@@ -26,7 +30,10 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel> imp
     if (mustDelete) {
       this.resourceService.delete(resource.id).subscribe(
         () => this.resources = this.resources.filter(element => element != resource),
-        () => alert("Erro ao tentar excluir!")
+        error => {
+          console.log('Erro ao tentar excluir!', error);
+          alert("Erro ao tentar excluir!");
+        }
       )
     }
   }

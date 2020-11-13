@@ -13,7 +13,7 @@ import { Store } from './store.model';
 export class StoreService extends BaseResourceService<Store> {
 
   constructor(protected injector: Injector, private orderService: OrderService) {
-    super("api/stores", injector, Store.fromJson);
+    super("stores", injector, Store.fromJson);
   }
 
 

@@ -9,7 +9,7 @@ import { Item } from './Item.model';
 export class ItemService extends BaseResourceService<Item> {
 
   constructor(protected injector: Injector) {
-    super("api/items", injector, Item.fromJson);
+    super("items", injector, Item.fromJson);
   }
 
 }
