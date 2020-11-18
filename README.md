@@ -1,3 +1,7 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/FabianoSouzaPereira/pocvirtualstore)
+![GitHub language count](https://img.shields.io/github/languages/count/FabianoSouzaPereira/pocvirtualstore)
+![GitHub top language](https://img.shields.io/github/languages/top/FabianoSouzaPereira/pocvirtualstore)</br>
+
 # Pocvirtualstore
 
 É uma aplicação web que foi baseada em Angular e tem a intenção demonstrar domínio desta
