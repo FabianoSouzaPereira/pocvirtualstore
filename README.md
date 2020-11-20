@@ -46,3 +46,8 @@ PrimeNG é uma coleção de ricos componentes de IU para Angular. Todos os widge
 ### Primeicons
 
 Fontes de ícone são fontes que contêm símbolos e glifos em vez de letras ou números. Eles são populares para web designers, pois você pode estilizá-los com CSS da mesma forma que um texto normal. Além disso, como são vetores, são facilmente escaláveis.
+
+### More Details about
+
+See [tree of project here](https://github.com/FabianoSouzaPereira/pocvirtualstore/issues/16#issue-747072030) 
+
