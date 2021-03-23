@@ -1,6 +1,6 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/FabianoSouzaPereira/pocvirtualstore)
-![GitHub language count](https://img.shields.io/github/languages/count/FabianoSouzaPereira/pocvirtualstore)
-![GitHub top language](https://img.shields.io/github/languages/top/FabianoSouzaPereira/pocvirtualstore)</br>
+![GitHub repo size](https://img.shields.io/github/repo-size/FabianoSouzaPereira/pocvirtualstore?color=green)
+![GitHub language count](https://img.shields.io/github/languages/count/FabianoSouzaPereira/pocvirtualstore?color=red)
+![GitHub top language](https://img.shields.io/github/languages/top/FabianoSouzaPereira/pocvirtualstore?color=blue)</br>
 
 # Pocvirtualstore
 
